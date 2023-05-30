@@ -162,4 +162,127 @@ algorithms using various methods that are not thoroughly explored in the current
 literature. These techniques facilitate the training of different machine learning 
 algorithms in an effective and efficient manner. The results validate the improved 
 performance of our proposed technique using the 4 commonly used performance 
-metrics (namely, accuracy, precision, recall, and F-1 score)
+metrics (namely, accuracy, precision, recall, and F-1 score).
+
+## METHODOLOGY:
+
+Data Cleaning and Pre-processing: There were 2 datasets present 
+in Kaggle. One is for true news and the other is for fake news. I merged both the 
+datasets to work on them. The website contains unfiltered data which must be 
+filtered before the final data set can be used to train the model. In data cleaning 
+step, first we check if there are any missing or junk values in the dataset for which 
+we used the isnull() function. 
+Exploratory Data Analysis: Exploratory data analysis (EDA) is used to 
+analyse and investigate the dataset and summarize its main characteristics if a 
+news is Fake or not by employing data visualization methods. It helps determine 
+the different subjects of the news based on the count and the comparison of true 
+news and fake news.
+Also used regular expressions (re) to treat text in a user defined function process.
+
+## MACHINE LEARNING ALGORITHMS:
+
+Machine learning is an important component of the growing field of data science. 
+Through the use of statistical methods, algorithms are trained to make 
+classifications or predictions, and to uncover key insights in data mining projects. 
+These insights subsequently drive decision making within applications and 
+businesses, ideally impacting key growth metrics. Below are the various Machine 
+Learning Models I implemented in my Project:
+
+### a) Logistic Regression:
+
+Logistic regression is often used a lot of times in machine learning for 
+predicting the likelihood of response attributes when a set of explanatory 
+independent attributes are given. It is used when the target attribute is also 
+known as a dependent variable having categorical values like yes/no or 
+true/false, etc. It’s widely used for solving classification problems. It falls 
+under the category of supervised machine learning. It efficiently solves 
+linear and binary classification problems. It is one of the most commonly 
+used and easy to implement algorithms. It’s a statistical technique to 
+predict classes which are binary. When the target variable has two 
+possible classes in that case it predicts the likelihood of occurrence of the 
+event. In our dataset the target variable is categorical as it has only two 
+classes-0 or 1. 
+
+### b) Decision Tree: 
+
+Decision Tree is a supervised learning technique that can be used for both 
+classification and Regression problems, but mostly it is preferred for 
+solving Classification problems. It is a tree-structured classifier, where 
+internal nodes represent the features of a dataset, branches represent the 
+decision rules and each leaf node represents the outcome.
+In a Decision tree, there are two nodes, which are the Decision Node and 
+Leaf Node. Decision nodes are used to make any decision and have 
+multiple branches, whereas Leaf nodes are the output of those decisions 
+and do not contain any further branches.
+The decisions or the test are performed on the basis of features of the 
+given dataset. It is a graphical representation for getting all the possible 
+solutions to a problem/decision based on given conditions. It is called a 
+decision tree because, similar to a tree, it starts with the root node, which 
+expands on further branches and constructs a tree-like structure. In order 
+to build a tree, we use the CART algorithm, which stands for Classification 
+and Regression Tree algorithm. A decision tree simply asks a question, 
+and based on the answer (Yes/No), it further split the tree into subtrees.
+
+### c) Random Forest:
+
+Random Forest is the most famous and it is considered as the best 
+algorithm for machine learning. It is a supervised learning algorithm. To 
+achieve more accurate and consistent prediction, random forest creates 
+several decision trees and combines them together. The major benefit of 
+using it is its ability to solve both regression and classification issues. 
+When building each individual tree, it employs bagging and feature 
+randomness in order to produce an uncorrelated tree forest whose 
+collective forecast has much better accuracy than any individual tree’s 
+prediction. Bagging enhances accuracy of machine learning methods by 
+grouping them together. In this algorithm, during the splitting of nodes it 
+takes only random subset of nodes into an account. When splitting a node, 
+it looks for the best feature from a random group of features rather than the 
+most significant feature. This results into getting better accuracy. It 
+efficiently deals with the huge datasets. It also solves the issue of 
+overfitting in datasets. It works as follows: First, it’ll select random samples 
+from the provided dataset. Next, for every selected sample it’ll create a 
+decision tree and it’ll receive a forecasted result from every created 
+decision tree. Then for each result which was predicted, it’ll perform 
+voting and through voting it will select the best predicted result. 
+
+### d) Naive Bayes:
+
+It is a probabilistic machine learning algorithm which is mainly used in 
+classification problems. It’s based on Bayes theorem. It is simple and easy 
+to build. It deals with huge datasets efficiently. It can solve complicated 
+classification problems. The existence of a specific feature in a class is 
+assumed to be independent of the presence of any other feature according 
+to naïve Bayes theorem. It’s formula is as follows : P(S|T) = P(T|S) * P(S) / 
+P(T) Here, T is the event to be predicted, S is the class value for an event. 
+This equation will find out the class in which the expected feature for 
+classification exists.
+
+## IMPLEMENTATION STEPS:
+
+As we already discussed in the methodology section about some of the 
+implementation methods. So, the language used in this project is Python 
+programming.
+We’re running python code in Anaconda navigator’s Jupyter notebook. Jupyter 
+notebook is much faster than Python IDE tools like PyCharm or Visual studio for 
+implementing ML algorithms. The advantage of Jupyter notebook is that it’s really 
+helpful for Data visualization and plotting some advance graphs like histogram 
+and heatmap of correlated matrices. Let’s revise implementation steps:
+a) Dataset collection: The dataset is downloaded from Kaggle. 
+https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
+b) Importing Libraries: Numpy, Pandas, Scikit-learn, Matplotlib and Seaborn libraries 
+are used.
+c) Exploratory Data Analysis: To get more insights from data.
+d) Data cleaning and pre-processing: Merged both datasets and checked for null and 
+junk values using isnull ().
+e) Feature Conversion: In this step, I converted my text data into Vectors using 
+CountVectorizer
+f) Model selection: First x is separated from y. X’s are features or input variables of the 
+dataset and y is dependent or target variable which is crucial to determine fake news. Then 
+by importing model_selection function of the sklearn library, I split our x and y into train and 
+test split using train_test_split () function of sklearn and kept 75% of the data for training and 
+25% for testing. 
+g) Applied ML models: In this step different models were applied on the same train and 
+test data to determine their accuracy and created a confusion matrix of all models.
+h) Model Testing: In this step I randomly input few news data to determine if the system is 
+predicting it accurately or not. Deployment of all the models to determine if a news is fake or 
+not.
