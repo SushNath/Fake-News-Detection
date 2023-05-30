@@ -267,22 +267,30 @@ notebook is much faster than Python IDE tools like PyCharm or Visual studio for
 implementing ML algorithms. The advantage of Jupyter notebook is that it’s really 
 helpful for Data visualization and plotting some advance graphs like histogram 
 and heatmap of correlated matrices. Let’s revise implementation steps:
+
 a) Dataset collection: The dataset is downloaded from Kaggle. 
 https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
+
 b) Importing Libraries: Numpy, Pandas, Scikit-learn, Matplotlib and Seaborn libraries 
 are used.
+
 c) Exploratory Data Analysis: To get more insights from data.
+
 d) Data cleaning and pre-processing: Merged both datasets and checked for null and 
 junk values using isnull ().
+
 e) Feature Conversion: In this step, I converted my text data into Vectors using 
 CountVectorizer
+
 f) Model selection: First x is separated from y. X’s are features or input variables of the 
 dataset and y is dependent or target variable which is crucial to determine fake news. Then 
 by importing model_selection function of the sklearn library, I split our x and y into train and 
 test split using train_test_split () function of sklearn and kept 75% of the data for training and 
 25% for testing. 
+
 g) Applied ML models: In this step different models were applied on the same train and 
 test data to determine their accuracy and created a confusion matrix of all models.
+
 h) Model Testing: In this step I randomly input few news data to determine if the system is 
 predicting it accurately or not. Deployment of all the models to determine if a news is fake or 
 not.
